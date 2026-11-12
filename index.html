@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asesmen Sumatif Akhir Semester (SAS) PPKn Kelas X - M. Yudi Silawane</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .fade-in {
+            animation: fadeIn 0.4s ease-in-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-800 min-h-screen flex flex-col justify-between">
+
+    <!-- Top Header / Navbar -->
+    <header class="bg-red-700 text-white shadow-md sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="bg-white text-red-700 p-2 rounded-lg font-bold shadow">
+                    <i class="fa-solid fa-graduation-cap text-xl"></i>
+                </div>
+                <div>
+                    <h1 class="text-base sm:text-lg font-bold tracking-wide">SAS PPKn Kelas X - Fase E</h1>
+                    <p class="text-xs text-red-100">SMA/MA • Tahun Pelajaran 2026/2027</p>
+                </div>
+            </div>
+            <div id="header-timer-container" class="hidden items-center space-x-2 bg-red-800 px-3 py-1.5 rounded-lg border border-red-600 shadow-inner mt-2 sm:mt-0">
+                <i class="fa-regular fa-clock text-amber-300 animate-pulse"></i>
+                <span class="text-xs uppercase tracking-wider text-red-200">Sisa Waktu:</span>
+                <span id="timer-display" class="font-mono font-bold text-amber-300 text-sm">90:00</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="flex-grow max-w-6xl w-full mx-auto p-4 sm:p-6">
+
+        <!-- 1. HALAMAN PEMBUKA / REGISTRASI -->
+        <section id="page-welcome" class="fade-in max-w-3xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-200 mt-4 sm:mt-8">
+            <div class="bg-gradient-to-r from-red-700 to-red-800 p-6 sm:p-8 text-white text-center relative overflow-hidden">
+                <div class="absolute -right-10 -bottom-10 opacity-15 text-9xl">
+                    <i class="fa-solid fa-book-open"></i>
+                </div>
+                <span class="inline-block bg-white/20 text-white text-xs px-3 py-1 rounded-full font-medium mb-3 backdrop-blur-sm">
+                    Kurikulum Merdeka • Semester Ganjil
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold mb-2">ASESMEN SUMATIF AKHIR SEMESTER (SAS)</h2>
+                <p class="text-red-100 text-sm sm:text-base font-medium">Mata Pelajaran: Pendidikan Pancasila (PPKn)</p>
+            </div>
+
+            <div class="p-6 sm:p-8 space-y-6">
+                <!-- Info Identitas Guru & Sekolah -->
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 sm:p-5 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                    <div class="flex items-start space-x-3">
+                        <div class="text-red-600 mt-0.5"><i class="fa-solid fa-chalkboard-user"></i></div>
+                        <div>
+                            <span class="block text-slate-500 text-xs font-semibold uppercase">Guru Pengampu</span>
+                            <span class="font-bold text-slate-800">M. Yudi Silawane</span>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="text-red-600 mt-0.5"><i class="fa-solid fa-school"></i></div>
+                        <div class="w-full">
+                            <span class="block text-slate-500 text-xs font-semibold uppercase">Nama Sekolah (Dapat Diedit)</span>
+                            <input type="text" id="school-name-input" value="SMA Negeri 1 Indonesia" class="w-full mt-1 bg-white border border-slate-300 rounded px-2.5 py-1 text-slate-800 font-medium text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-red-500">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Petunjuk Pengerjaan -->
+                <div class="space-y-3">
+                    <h3 class="font-bold text-slate-800 text-sm sm:text-base flex items-center">
+                        <i class="fa-solid fa-circle-info text-red-600 mr-2"></i> Petunjuk Pengerjaan Ujian:
+                    </h3>
+                    <ul class="list-disc list-inside text-xs sm:text-sm text-slate-600 space-y-1.5 pl-2 bg-red-50/50 p-4 rounded-xl border border-red-100">
+                        <li>Isi identitas lengkap (Nama, Kelas, Nomor Absen) sebelum memulai.</li>
+                        <li>Terdapat 30 soal total (15 Pilihan Ganda Biasa, 10 Pilihan Ganda Kompleks, dan 5 Benar/Salah).</li>
+                        <li>Waktu pengerjaan adalah <strong>90 menit</strong>. Timer berjalan otomatis setelah ujian dimulai.</li>
+                        <li>Pilihan Ganda Kompleks memungkinkan pemilihan lebih dari satu jawaban benar.</li>
+                        <li>Jawaban tersimpan otomatis secara lokal di browser Anda selama pengerjaan.</li>
+                        <li>Pastikan memeriksa kembali seluruh jawaban sebelum menekan tombol "Selesai & Kirim Ujian".</li>
+                    </ul>
+                </div>
+
+                <!-- Form Identitas Siswa -->
+                <form id="form-identity" onsubmit="startExam(event)" class="space-y-4 pt-2 border-t border-slate-200">
+                    <h3 class="font-bold text-slate-800 text-sm sm:text-base flex items-center">
+                        <i class="fa-solid fa-id-card text-red-600 mr-2"></i> Masukkan Identitas Peserta
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1">Nama Lengkap *</label>
+                            <input type="text" id="student-name" required placeholder="Contoh: Andi Pratama" class="w-full px-3 py-2.5 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-red-500 bg-white">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1">Kelas *</label>
+                            <select id="student-class" required class="w-full px-3 py-2.5 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-red-500 bg-white">
+                                <option value="">Pilih Kelas</option>
+                                <option value="X-1">X-1</option>
+                                <option value="X-2">X-2</option>
+                                <option value="X-3">X-3</option>
+                                <option value="X-4">X-4</option>
+                                <option value="X-5">X-5</option>
+                                <option value="X-6">X-6</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1">Nomor Absen *</label>
+                            <input type="number" id="student-number" min="1" max="50" required placeholder="Contoh: 12" class="w-full px-3 py-2.5 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-red-500 bg-white">
+                        </div>
+                    </div>
+
+                    <div class="pt-4 flex justify-end">
+                        <button type="submit" class="w-full sm:w-auto bg-red-600 hover:bg-red-700 text-white font-bold px-6 py-3 rounded-xl shadow-lg transition duration-200 flex items-center justify-center space-x-2">
+                            <span>Mulai Mengerjakan Ujian</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- 2. HALAMAN PENGERJAAN SOAL -->
+        <section id="page-exam" class="hidden fade-in space-y-6">
+            <!-- Top Status Bar -->
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 flex flex-wrap items-center justify-between gap-4">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-full bg-red-100 text-red-700 flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-user-graduate"></i>
+                    </div>
+                    <div>
+                        <h3 id="display-student-name" class="font-bold text-slate-800 text-sm sm:text-base">-</h3>
+                        <p id="display-student-info" class="text-xs text-slate-500">Kelas: - | No Absen: -</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="text-right">
+                        <span class="block text-xs text-slate-500 uppercase font-semibold">Progres Pengerjaan</span>
+                        <span id="progress-text" class="text-sm font-bold text-red-600">0 dari 30 Soal Dijawab</span>
+                    </div>
+                    <div class="w-24 bg-slate-200 h-2.5 rounded-full overflow-hidden hidden sm:block">
+                        <div id="progress-bar-fill" class="bg-red-600 h-full w-0 transition-all duration-300"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+                <!-- Kolom Utama Soal (3 Grid) -->
+                <div class="lg:col-span-3 space-y-4">
+                    <div class="bg-white rounded-2xl shadow-md border border-slate-200 p-5 sm:p-8">
+                        <!-- Info Soal Header -->
+                        <div class="flex flex-wrap items-center justify-between border-b border-slate-100 pb-4 mb-4 gap-2">
+                            <div class="flex items-center space-x-2">
+                                <span id="badge-question-number" class="bg-red-600 text-white font-bold text-xs sm:text-sm px-3 py-1 rounded-lg">Soal ke-1</span>
+                                <span id="badge-question-type" class="bg-slate-100 text-slate-700 font-medium text-xs px-2.5 py-1 rounded-md">Pilihan Ganda Biasa</span>
+                            </div>
+                            <span id="badge-question-difficulty" class="bg-amber-100 text-amber-800 font-semibold text-xs px-2.5 py-1 rounded-md">Mudah</span>
+                        </div>
+
+                        <!-- Teks Soal -->
+                        <div id="question-text-container" class="text-slate-800 text-base sm:text-lg font-medium mb-6 leading-relaxed">
+                            <!-- Pertanyaan dimuat via JS -->
+                        </div>
+
+                        <!-- Opsi Jawaban -->
+                        <div id="options-container" class="space-y-3 mb-8">
+                            <!-- Pilihan dimuat via JS -->
+                        </div>
+
+                        <!-- Navigasi Soal Bawah -->
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                            <button type="button" id="btn-prev" onclick="navigateQuestion(-1)" class="bg-slate-200 hover:bg-slate-300 text-slate-700 font-semibold px-4 py-2.5 rounded-xl text-xs sm:text-sm transition flex items-center space-x-2 disabled:opacity-40 disabled:cursor-not-allowed">
+                                <i class="fa-solid fa-chevron-left"></i>
+                                <span>Sebelumnya</span>
+                            </button>
+
+                            <button type="button" id="btn-next" onclick="navigateQuestion(1)" class="bg-red-600 hover:bg-red-700 text-white font-semibold px-5 py-2.5 rounded-xl text-xs sm:text-sm transition flex items-center space-x-2 shadow">
+                                <span>Selanjutnya</span>
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kolom Navigasi Nomor Soal (1 Grid) -->
+                <div class="lg:col-span-1 space-y-4">
+                    <div class="bg-white rounded-2xl shadow-md border border-slate-200 p-5 sticky top-20">
+                        <h4 class="font-bold text-slate-800 text-sm mb-3 flex items-center justify-between">
+                            <span><i class="fa-solid fa-th text-red-600 mr-2"></i> Nomor Soal</span>
+                            <span class="text-xs font-normal text-slate-500">1 - 30</span>
+                        </h4>
+                        <!-- Grid Angka 1-30 -->
+                        <div id="question-nav-grid" class="grid grid-cols-5 gap-2 mb-6 max-h-64 overflow-y-auto pr-1">
+                            <!-- Tombol nomor dimuat via JS -->
+                        </div>
+
+                        <button type="button" onclick="confirmSubmitExam()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-4 rounded-xl text-xs sm:text-sm shadow-lg transition flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span>Selesai & Kirim Ujian</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. HALAMAN HASIL UJIAN -->
+        <section id="page-result" class="hidden fade-in max-w-4xl mx-auto space-y-6">
+            <div class="bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden">
+                <div class="bg-gradient-to-r from-red-700 to-red-800 p-6 sm:p-8 text-white text-center">
+                    <div class="inline-flex bg-white/20 p-3 rounded-full mb-3 backdrop-blur-sm">
+                        <i class="fa-solid fa-award text-3xl text-amber-300"></i>
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold mb-1">HASIL ASESMEN SUMATIF AKHIR SEMESTER</h2>
+                    <p class="text-red-100 text-sm">Pendidikan Pancasila (PPKn) Kelas X</p>
+                </div>
+
+                <div class="p-6 sm:p-8 space-y-6">
+                    <!-- Kartu Skor Utama -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+                        <div class="bg-slate-50 border border-slate-200 p-5 rounded-xl">
+                            <span class="block text-xs font-bold text-slate-500 uppercase mb-1">Nilai Akhir Siswa</span>
+                            <span id="result-score" class="text-4xl sm:text-5xl font-black text-red-600">0</span>
+                            <span class="block text-xs text-slate-400 mt-1">Skala 0 - 100</span>
+                        </div>
+                        <div class="bg-slate-50 border border-slate-200 p-5 rounded-xl flex flex-col justify-center">
+                            <span class="block text-xs font-bold text-slate-500 uppercase mb-1">Kategori Hasil</span>
+                            <span id="result-category" class="text-lg sm:text-xl font-bold text-slate-800">-</span>
+                        </div>
+                        <div class="bg-slate-50 border border-slate-200 p-5 rounded-xl flex flex-col justify-center">
+                            <span class="block text-xs font-bold text-slate-500 uppercase mb-1">Identitas Peserta</span>
+                            <span id="result-student-name" class="font-bold text-slate-800 text-sm truncate">-</span>
+                            <span id="result-student-meta" class="text-xs text-slate-500 mt-0.5">Kelas: - | Absen: -</span>
+                        </div>
+                    </div>
+
+                    <!-- Statistik Rincian -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+                        <div class="bg-emerald-50 border border-emerald-200 p-4 rounded-xl">
+                            <span class="block text-xs font-semibold text-emerald-600 uppercase">Jawaban Benar</span>
+                            <span id="result-correct" class="text-2xl font-bold text-emerald-700">0</span>
+                        </div>
+                        <div class="bg-rose-50 border border-rose-200 p-4 rounded-xl">
+                            <span class="block text-xs font-semibold text-rose-600 uppercase">Jawaban Salah</span>
+                            <span id="result-wrong" class="text-2xl font-bold text-rose-700">0</span>
+                        </div>
+                        <div class="bg-blue-50 border border-blue-200 p-4 rounded-xl">
+                            <span class="block text-xs font-semibold text-blue-600 uppercase">Total Soal</span>
+                            <span class="text-2xl font-bold text-blue-700">30</span>
+                        </div>
+                        <div class="bg-amber-50 border border-amber-200 p-4 rounded-xl">
+                            <span class="block text-xs font-semibold text-amber-600 uppercase">Waktu Selesai</span>
+                            <span id="result-time-taken" class="text-xl font-bold text-amber-700">00:00</span>
+                        </div>
+                    </div>
+
+                    <!-- Tombol Aksi Hasil -->
+                    <div class="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-slate-200">
+                        <div class="flex flex-wrap gap-2">
+                            <button onclick="toggleReviewMode()" class="bg-red-600 hover:bg-red-700 text-white font-semibold px-4 py-2.5 rounded-xl text-xs sm:text-sm transition flex items-center space-x-2 shadow">
+                                <i class="fa-solid fa-book-open-reader"></i>
+                                <span>Lihat Pembahasan & Kunci Jawaban</span>
+                            </button>
+                            <button onclick="openTeacherDashboard()" class="bg-slate-700 hover:bg-slate-800 text-white font-semibold px-4 py-2.5 rounded-xl text-xs sm:text-sm transition flex items-center space-x-2 shadow">
+                                <i class="fa-solid fa-chalkboard-user"></i>
+                                <span>Panel Guru (Rekap & CSV)</span>
+                            </button>
+                        </div>
+                        <button onclick="resetExam()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 font-semibold px-4 py-2.5 rounded-xl text-xs sm:text-sm transition flex items-center space-x-2">
+                            <i class="fa-solid fa-rotate-right"></i>
+                            <span>Ulangi Ujian</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Daftar Pembahasan & Kunci Jawaban (Hidden by default until toggled) -->
+            <div id="review-section" class="hidden space-y-4">
+                <div class="bg-white rounded-2xl shadow-md border border-slate-200 p-6">
+                    <h3 class="font-bold text-slate-800 text-lg mb-2 flex items-center">
+                        <i class="fa-solid fa-list-check text-red-600 mr-2"></i> Pembahasan dan Kunci Jawaban Lengkap
+                    </h3>
+                    <p class="text-xs text-slate-500 mb-6">Berikut adalah kunci jawaban resmi serta pembahasan detail setiap butir soal asesmen.</p>
+                    
+                    <div id="review-list-container" class="space-y-6">
+                        <!-- Dimuat via JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. MODAL PANEL GURU / REKAP NILAI -->
+        <div id="modal-teacher" class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+            <div class="bg-white w-full max-w-4xl rounded-2xl shadow-2xl overflow-hidden border border-slate-200 flex flex-col max-h-[90vh]">
+                <div class="bg-slate-800 text-white p-5 flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <div class="bg-red-600 p-2 rounded-lg"><i class="fa-solid fa-table"></i></div>
+                        <div>
+                            <h3 class="font-bold text-base sm:text-lg">Panel Rekap Nilai Siswa (Guru)</h3>
+                            <p class="text-xs text-slate-300">Pengampu: M. Yudi Silawane • Kelas X SMA/MA</p>
+                        </div>
+                    </div>
+                    <button onclick="closeTeacherDashboard()" class="text-slate-400 hover:text-white p-2">
+                        <i class="fa-solid fa-xmark text-xl"></i>
+                    </button>
+                </div>
+
+                <div class="p-6 overflow-y-auto space-y-4 flex-grow">
+                    <div class="flex flex-wrap items-center justify-between gap-3">
+                        <p class="text-xs sm:text-sm text-slate-600">Daftar siswa yang telah menyelesaikan Asesmen Sumatif Akhir Semester (SAS) PPKn.</p>
+                        <div class="flex space-x-2">
+                            <button onclick="downloadCSV()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-3.5 py-2 rounded-lg text-xs transition flex items-center space-x-1.5 shadow">
+                                <i class="fa-solid fa-file-csv"></i>
+                                <span>Unduh CSV</span>
+                            </button>
+                            <button onclick="window.print()" class="bg-slate-600 hover:bg-slate-700 text-white font-semibold px-3.5 py-2 rounded-lg text-xs transition flex items-center space-x-1.5 shadow">
+                                <i class="fa-solid fa-print"></i>
+                                <span>Cetak Rekap</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="overflow-x-auto border border-slate-200 rounded-xl">
+                        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+                            <thead>
+                                <tr class="bg-slate-100 text-slate-700 font-bold border-b border-slate-200">
+                                    <th class="p-3">No</th>
+                                    <th class="p-3">Nama Peserta</th>
+                                    <th class="p-3">Kelas</th>
+                                    <th class="p-3">Absen</th>
+                                    <th class="p-3 text-center">Benar</th>
+                                    <th class="p-3 text-center">Salah</th>
+                                    <th class="p-3 text-center">Nilai</th>
+                                    <th class="p-3">Kategori</th>
+                                </tr>
+                            </thead>
+                            <tbody id="teacher-table-body" class="divide-y divide-slate-100">
+                                <!-- Dimuat via JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 border-t border-slate-200 p-4 flex justify-end">
+                    <button onclick="closeTeacherDashboard()" class="bg-slate-700 hover:bg-slate-800 text-white font-semibold px-5 py-2 rounded-xl text-xs sm:text-sm">
+                        Tutup Panel
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. MODAL KONFIRMASI KIRIM UJIAN -->
+        <div id="modal-confirm" class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+            <div class="bg-white w-full max-w-md rounded-2xl shadow-2xl p-6 text-center space-y-4 border border-slate-200">
+                <div class="w-14 h-14 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center mx-auto text-2xl">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                </div>
+                <h3 class="font-bold text-slate-800 text-lg">Konfirmasi Pengiriman Ujian</h3>
+                <p id="confirm-message" class="text-xs sm:text-sm text-slate-600">
+                    Anda yakin ingin mengirimkan jawaban ujian sekarang? Pastikan seluruh soal telah terjawab dengan baik.
+                </p>
+                <div class="flex space-x-3 pt-2">
+                    <button onclick="closeConfirmModal()" class="flex-1 bg-slate-200 hover:bg-slate-300 text-slate-700 font-semibold py-2.5 rounded-xl text-sm transition">
+                        Periksa Kembali
+                    </button>
+                    <button onclick="submitExamFinal()" class="flex-1 bg-red-600 hover:bg-red-700 text-white font-semibold py-2.5 rounded-xl text-sm transition shadow">
+                        Ya, Kirim Sekarang
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. MODAL NOTIFIKASI / WARNING -->
+        <div id="modal-alert" class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+            <div class="bg-white w-full max-w-sm rounded-2xl shadow-2xl p-6 text-center space-y-4 border border-slate-200">
+                <div id="alert-icon" class="w-14 h-14 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto text-2xl">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                </div>
+                <h3 id="alert-title" class="font-bold text-slate-800 text-lg">Perhatian</h3>
+                <p id="alert-message" class="text-xs sm:text-sm text-slate-600">Pesan peringatan.</p>
+                <button onclick="closeAlertModal()" class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-2.5 rounded-xl text-sm transition shadow">
+                    Mengerti
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-slate-400 text-xs py-4 text-center border-t border-slate-700 mt-8">
+        <div class="max-w-6xl mx-auto px-4">
+            <p>Asesmen Sumatif Akhir Semester (SAS) PPKn Kelas X SMA/MA • Kurikulum Merdeka</p>
+            <p class="mt-1">Dikembangkan oleh <strong>M. Yudi Silawane</strong> • Berbasis Web Offline Interaktif</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Data & Aplikasi -->
+    <script>
+        // DATA 30 SOAL KOMPREHENSIF PPKN KELAS X FASE E (BAB I & BAB II)
+        const questionsData = [
+            // --- BAGIAN 1: PILIHAN GANDA BIASA (15 SOAL) ---
+            {
+                id: 1,
+                type: "pg",
+                difficulty: "Mudah",
+                materi: "Bab I - Sejarah Perumusan Pancasila",
+                question: "Sidang pertama Badan Penyelidik Usaha-Usaha Persiapan Kemerdekaan Indonesia (BPUPKI) yang dilaksanakan pada tanggal 29 Mei sampai 1 Juni 1945 secara khusus membahas mengenai...",
+                options: [
+                    { key: "A", text: "Bentuk negara Republik Indonesia" },
+                    { key: "B", text: "Dasar negara Indonesia merdeka" },
+                    { key: "C", text: "Rancangan Undang-Undang Dasar" },
+                    { key: "D", text: "Teks Proklamasi Kemerdekaan" }
+                ],
+                answer: "B",
+                discussion: "Sidang pertama BPUPKI (29 Mei - 1 Juni 1945) yang dipimpin oleh Dr. K.R.T. Radjiman Wedyodiningrat secara khusus membahas dan merumuskan dasar negara Indonesia merdeka."
+            },
+            {
+                id: 2,
+                type: "pg",
+                difficulty: "Mudah",
+                materi: "Bab I - Tokoh Perumus Pancasila",
+                question: "Tokoh nasional yang menyampaikan gagasan mengenai lima asas dasar negara pada sidang BPUPKI tanggal 1 Juni 1945, di mana hari tersebut kini diperingati sebagai Hari Lahir Pancasila adalah...",
+                options: [
+                    { key: "A", text: "Mr. Soepomo" },
+                    { key: "B", text: "Ir. Soekarno" },
+                    { key: "C", text: "Mohammad Hatta" },
+                    { key: "D", text: "Ki Hadjar Dewantara" }
+                ],
+                answer: "B",
+                discussion: "Ir. Soekarno menyampaikan gagasan dasar negara bernama 'Pancasila' pada pidatonya tanggal 1 Juni 1945."
+            },
+            {
+                id: 3,
+                type: "pg",
+                difficulty: "Sedang",
+                materi: "Bab I - Kedudukan dan Fungsi Pancasila",
+                question: "Pancasila memiliki kedudukan yang sangat fundamental bagi bangsa Indonesia. Sebagai sumber dari segala sumber hukum negara, Pancasila berfungsi sebagai...",
+                options: [
+                    { key: "A", text: "Pedoman pergaulan sehari-hari antar suku bangsa" },
+                    { key: "B", text: "Dasar dan pengatur sistem pertahanan negara" },
+                    { key: "C", text: "Cerminan kepribadian dan jiwa seluruh rakyat Indonesia" },
+                    { key: "D", text: "Dasar hukum tertinggi yang menjiwai seluruh peraturan perundang-undangan di Indonesia" }
+                ],
+                answer: "D",
+                discussion: "Sebagai sumber dari segala sumber hukum (Staatsfundamentalnorm), Pancasila menempati kedudukan tertinggi yang menjadi landasan bagi penyusunan seluruh peraturan perundang-undangan."
+            },
+            {
+                id: 4,
+                type: "pg",
+                difficulty: "Sedang",
+                materi: "Bab I - Pancasila sebagai Ideologi Negara",
+                question: "Pancasila sebagai ideologi terbuka memiliki sifat yang mampu mengikuti perkembangan zaman tanpa harus kehilangan nilai-nilai dasarnya. Hal ini disebabkan karena nilai dasar Pancasila bersumber dari...",
+                options: [
+                    { key: "A", text: "Keputusan mutlak pemerintah yang berkuasa" },
+                    { key: "B", text: "Pandangan hidup dan budaya yang berakar dari kepribadian bangsa Indonesia sendiri" },
+                    { key: "C", text: "Ideologi liberalisme negara-negara barat modern" },
+                    { key: "D", text: "Perjanjian internasional antarnegara pendiri PBB" }
+                ],
+                answer: "B",
+                discussion: "Ideologi terbuka Pancasila digali dari nilai-nilai budaya dan pandangan hidup masyarakat Indonesia sendiri sehingga selalu relevan dengan dinamika zaman."
+            },
+            {
+                id: 5,
+                type: "pg",
+                difficulty: "Mudah",
+                materi: "Bab I - Nilai-Nilai Sila Pancasila",
+                question: "Sila pertama Pancasila, 'Ketuhanan Yang Maha Esa', mengandung nilai utama yang berkaitan dengan...",
+                options: [
+                    { key: "A", text: "Pengakuan terhadap harkat dan martabat manusia secara universal" },
+                    { key: "B", text: "Kesadaran beragama serta sikap toleransi antarumat beragama di Indonesia" },
+                    { key: "C", text: "Semangat gotong royong dalam kehidupan bermasyarakat" },
+                    { key: "D", text: "Kepatuhan terhadap hukum positif yang berlaku" }
+                ],
+                answer: "B",
+                discussion: "Sila pertama menegaskan pengakuan Tuhan serta kewajiban menjalankan ajaran agama secara toleran dan damai dalam kehidupan berbangsa."
+            },
+            {
+                id: 6,
+                type: "pg",
+                difficulty: "HOTS",
+                materi: "Bab I - Penerapan Nilai Pancasila",
+                question: "Di sebuah sekolah SMA, terjadi pengelompokan pertemanan yang hanya didasarkan pada kesamaan status sosial ekonomi, sehingga memicu sikap eksklusif dan merendahkan kelompok lain. Berdasarkan nilai-nilai Pancasila, tindakan yang paling tepat untuk mengatasi permasalahan tersebut adalah...",
+                options: [
+                    { key: "A", text: "Membiarkan kelompok tersebut berkembang karena merupakan hak kebebasan bersosialisasi" },
+                    { key: "B", text: "Mengadakan kegiatan gotong royong dan diskusi lintas kelompok kelas yang diinisiasi oleh guru untuk menanamkan nilai persamaan harkat" },
+                    { key: "C", text: "Melaporkan seluruh siswa yang terlibat kepada pihak kepolisian setempat" },
+                    { key: "D", text: "Memindahkan seluruh siswa kaya ke sekolah lain agar tercipta kesetaraan mutlak" }
+                ],
+                answer: "B",
+                discussion: "Penyelesaian masalah sosial di sekolah menuntut pendekatan edukatif yang mencerminkan nilai kemanusiaan yang adil dan beradab serta persatuan Indonesia (Sila ke-2 dan ke-3)."
+            },
+            {
+                id: 7,
+                type: "pg",
+                difficulty: "Mudah",
+                materi: "Bab II - Sejarah UUD NRI 1945",
+                question: "Undang-Undang Dasar Negara Republik Indonesia Tahun 1945 disahkan secara resmi sebagai konstitusi negara oleh Panitia Persiapan Kemerdekaan Indonesia (PPKI) pada tanggal...",
+                options: [
+                    { key: "A", text: "17 Agustus 1945" },
+                    { key: "B", text: "18 Agustus 1945" },
+                    { key: "C", text: "22 Juni 1945" },
+                    { key: "D", text: "1 Juni 1945" }
+                ],
+                answer: "B",
+                discussion: "PPKI mengesahkan UUD 1945 sehari setelah proklamasi kemerdekaan, yaitu pada tanggal 18 Agustus 1945."
+            },
+            {
+                id: 8,
+                type: "pg",
+                difficulty: "Sedang",
+                materi: "Bab II - Kedudukan dan Fungsi UUD NRI 1945",
+                question: "Dalam tata urutan peraturan perundang-undangan di Indonesia, UUD NRI Tahun 1945 berkedudukan sebagai...",
+                options: [
+                    { key: "A", text: "Undang-undang biasa yang dapat diubah oleh presiden kapan saja" },
+                    { key: "B", text: "Hukum dasar tertulis yang menjadi hukum tertinggi dan dasar bagi pembentukan peraturan perundang-undangan di bawahnya" },
+                    { key: "C", text: "Pedoman moral bagi penyelenggara negara yang tidak memiliki sanksi hukum" },
+                    { key: "D", text: "Peraturan pelaksanaan dari ketetapan Majelis Permusyawaratan Rakyat" }
+                ],
+                answer: "B",
+                discussion: "UUD 1945 adalah hukum dasar tertulis (konstitusi tertulis) sekaligus hukum tertinggi di Republik Indonesia."
+            },
+            {
+                id: 9,
+                type: "pg",
+                difficulty: "Mudah",
+                materi: "Bab II - Sistematika UUD NRI 1945",
+                question: "Setelah mengalami amandemen sebanyak empat kali, sistematika UUD NRI Tahun 1945 secara garis besar terdiri atas...",
+                options: [
+                    { key: "A", text: "Pembukaan dan Batang Tubuh" },
+                    { key: "B", text: "Pembukaan dan Pasal-Pasal" },
+                    { key: "C", text: "Pembukaan, Batang Tubuh, dan Penjelasan" },
+                    { key: "D", text: "Mukaddimah dan Pasal-Pasal Dasar" }
+                ],
+                answer: "B",
+                discussion: "Pasca amandemen, sistematika UUD 1945 terdiri atas Pembukaan serta Pasal-Pasal (yang terbagi dalam bab dan pasal tanpa bagian Penjelasan resmi)."
+            },
+            {
+                id: 10,
+                type: "pg",
+                difficulty: "Sedang",
+                materi: "Bab II - Hak dan Kewajiban Warga Negara",
+                question: "Pasal 27 ayat (1) UUD NRI Tahun 1945 menegaskan bahwa segala warga negara bersamaan kedudukannya di dalam hukum dan pemerintahan dan wajib menjunjung hukum dan pemerintahan itu dengan tidak ada kecualinya. Hal ini merupakan jaminan konstitusional terhadap...",
+                options: [
+                    { key: "A", text: "Hak mendapatkan pekerjaan dan penghidupan layak" },
+                    { key: "B", text: "Prinsip persamaan di hadapan hukum (equality before the law)" },
+                    { key: "C", text: "Hak kebebasan berserikat dan berkumpul" },
+                    { key: "D", text: "Kewajiban membela pertahanan negara" }
+                ],
+                answer: "B",
+                discussion: "Pasal 27 ayat (1) mengatur prinsip kesetaraan setiap warga negara di hadapan hukum dan pemerintahan."
+            },
+            {
+                id: 11,
+                type: "pg",
+                difficulty: "HOTS",
+                materi: "Bab II - Penerapan Konstitusi",
+                question: "Seorang pengendara sepeda motor tidak mengenakan helm standar nasional dan menerobos lampu merah di jalan raya dengan alasan terburu-buru mengejar waktu sekolah. Tindakan tersebut merupakan bentuk pelanggaran terhadap konstitusi dan hukum karena...",
+                options: [
+                    { key: "A", text: "Melanggar hak orang lain untuk mendapatkan kenyamanan berlalu lintas serta mengabaikan kewajiban menaati hukum" },
+                    { key: "B", text: "Merupakan urusan pribadi yang tidak berdampak pada kehidupan bernegara" },
+                    { key: "C", text: "Hanya melanggar aturan lalu lintas ringan tanpa kaitan dengan UUD 1945" },
+                    { key: "D", text: "Sah dilakukan demi kepentingan mendesak pelajar" }
+                ],
+                answer: "A",
+                discussion: "Kepatuhan berlalu lintas mencerminkan kewajiban warga negara dalam menjunjung hukum dan ketertiban umum sesuai amanat konstitusi."
+            },
+            {
+                id: 12,
+                type: "pg",
+                difficulty: "Mudah",
+                materi: "Bab I - Kedudukan Pancasila",
+                question: "Peran utama Pancasila sebagai pandangan hidup bangsa (way of life) adalah...",
+                options: [
+                    { key: "A", text: "Menjadi dasar bagi pembuatan APBN negara" },
+                    { key: "B", text: "Menjadi petunjuk arah dan pedoman dalam menyelesaikan berbagai persoalan hidup berbangsa dan bernegara" },
+                    { key: "C", text: "Menjadi lambang resmi yang dipasang di ruang sidang DPR" },
+                    { key: "D", text: "Menggantikan seluruh kebudayaan daerah di Indonesia" }
+                ],
+                answer: "B",
+                discussion: "Pandangan hidup bangsa berfungsi sebagai pedoman, petunjuk arah, serta pegangan dalam bersikap dan bertindak sehari-hari."
+            },
+            {
+                id: 13,
+                type: "pg",
+                difficulty: "Sedang",
+                materi: "Bab I - Perumusan Pancasila",
+                question: "Selain Ir. Soekarno dan Mr. Soepomo, tokoh penting yang turut mengusulkan rumusan dasar negara dalam sidang BPUPKI adalah...",
+                options: [
+                    { key: "A", text: "Drs. Mohammad Hatta" },
+                    { key: "B", text: "Mr. Moh. Yamin" },
+                    { key: "C", text: "Prof. Dr. Soepomo" },
+                    { key: "D", text: "Sutan Sjahrir" }
+                ],
+                answer: "B",
+                discussion: "Tiga tokoh pengusul dasar negara pada sidang BPUPKI adalah Mr. Moh. Yamin, Prof. Dr. Mr. Soepomo, dan Ir. Soekarno."
+            },
+            {
+                id: 14,
+                type: "pg",
+                difficulty: "HOTS",
+                materi: "Bab II - Hak dan Kewajiban Warga Negara",
+                question: "Kasus pengingkaran kewajiban membayar pajak oleh wajib pajak dapat menghambat pembangunan nasional yang dibiayai dari Anggaran Pendapatan dan Belanja Negara (APBN). Solusi konstitusional yang paling tepat untuk mengatasi masalah tersebut adalah...",
+                options: [
+                    { key: "A", text: "Pemerintah menghapus seluruh pajak agar masyarakat tidak terbebani" },
+                    { key: "B", text: "Penegakan hukum perpajakan secara tegas serta peningkatan sosialisasi kesadaran bela negara dan tanggung jawab warga" },
+                    { key: "C", text: "Membiarkan warga memilih untuk membayar atau tidak" },
+                    { key: "D", text: "Menaikkan pajak secara drastis bagi warga miskin" }
+                ],
+                answer: "B",
+                discussion: "Pajak merupakan perwujudan kewajiban kenegaraan. Penegakan hukum dan kesadaran warga adalah kunci utama solusinya."
+            },
+            {
+                id: 15,
+                type: "pg",
+                difficulty: "Mudah",
+                materi: "Bab I - Nilai-Nilai Pancasila",
+                question: "Sila keempat Pancasila menekankan prinsip kerakyatan yang dipimpin oleh hikmat kebijaksanaan dalam permusyawaratan/perwakilan. Nilai utama dari sila ini adalah...",
+                options: [
+                    { key: "A", text: "Mengutamakan keputusan pribadi di atas kepentingan umum" },
+                    { key: "B", text: "Mengutamakan musyawarah mufakat dalam mengambil keputusan untuk kepentingan bersama" },
+                    { key: "C", text: "Menyerahkan seluruh keputusan kepada penguasa mutlak" },
+                    { key: "D", text: "Menolak hasil keputusan pemungutan suara" }
+                ],
+                answer: "B",
+                discussion: "Sila keempat menjiwai semangat demokrasi melalui musyawarah mufakat dan menghargai pendapat orang lain."
+            },
+
+            // --- BAGIAN 2: PILIHAN GANDA KOMPLEKS (10 SOAL) ---
+            // (Catatan: 4 pilihan pernyataan, jawaban lebih dari satu benar)
+            {
+                id: 16,
+                type: "pgk",
+                difficulty: "Sedang",
+                materi: "Bab I - Fungsi & Kedudukan Pancasila",
+                question: "Pilihlah DUA pernyataan yang paling tepat mengenai fungsi dan kedudukan Pancasila bagi bangsa Indonesia!",
+                options: [
+                    { key: "A", text: "Pancasila berfungsi sebagai dasar negara yang mengatur penyelenggaraan pemerintahan." },
+                    { key: "B", text: "Pancasila merupakan ideologi tertutup yang kaku dan tidak boleh disesuaikan dengan zaman." },
+                    { key: "C", text: "Pancasila berfungsi sebagai pandangan hidup yang memberi pedoman hidup bermasyarakat." },
+                    { key: "D", text: "Pancasila kedudukannya berada di bawah peraturan pemerintah daerah." }
+                ],
+                answer: ["A", "C"],
+                discussion: "Pancasila adalah dasar negara serta pandangan hidup bangsa yang bersifat terbuka (fleksibel namun tetap pada nilai dasarnya)."
+            },
+            {
+                id: 17,
+                type: "pgk",
+                difficulty: "HOTS",
+                materi: "Bab I - Penerapan Nilai Pancasila",
+                question: "Manakah DUA contoh tindakan di lingkungan sekolah yang mencerminkan pengamalan nilai Sila Ketiga Pancasila ('Persatuan Indonesia')?",
+                options: [
+                    { key: "A", text: "Mengadakan kerja bakti membersihkan lingkungan sekolah bersama seluruh siswa tanpa membedakan suku." },
+                    { key: "B", text: "Berteman hanya dengan kelompok suku atau daerah asal yang sama." },
+                    { key: "C", text: "Mengikuti kegiatan upacara bendera dengan khidmat dan tertib." },
+                    { key: "D", text: "Menyontek saat ujian demi mendapatkan nilai tertinggi di kelas." }
+                ],
+                answer: ["A", "C"],
+                discussion: "Gotong royong lintas suku dan kedisiplinan upacara bendera memperkuat rasa persatuan dan nasionalisme."
+            },
+            {
+                id: 18,
+                type: "pgk",
+                difficulty: "Sedang",
+                materi: "Bab II - UUD NRI Tahun 1945",
+                question: "Pilihlah DUA pernyataan yang benar mengenai UUD NRI Tahun 1945!",
+                options: [
+                    { key: "A", text: "UUD 1945 disahkan oleh PPKI pada tanggal 18 Agustus 1945." },
+                    { key: "B", text: "UUD 1945 merupakan konstitusi tidak tertulis di Indonesia." },
+                    { key: "C", text: "UUD 1945 memuat aturan dasar kehidupan bernegara dan perlindungan HAM." },
+                    { key: "D", text: "UUD 1945 tidak dapat diamandemen dalam kondisi apa pun." }
+                ],
+                answer: ["A", "C"],
+                discussion: "UUD 1945 adalah konstitusi tertulis yang disahkan 18 Agustus 1945 dan memuat perlindungan hak asasi manusia."
+            },
+            {
+                id: 19,
+                type: "pgk",
+                difficulty: "HOTS",
+                materi: "Bab II - Hak dan Kewajiban Warga Negara",
+                question: "Berdasarkan UUD NRI Tahun 1945, manakah DUA bentuk kewajiban konstitusional setiap warga negara Indonesia?",
+                options: [
+                    { key: "A", text: "Wajib mentaati hukum dan pemerintahan (Pasal 27 ayat 1)." },
+                    { key: "B", text: "Wajib mendapatkan pendidikan dan pengajaran yang layak." },
+                    { key: "C", text: "Wajib ikut serta dalam upaya pembelaan negara (Pasal 27 ayat 3)." },
+                    { key: "D", text: "Wajib memeluk agama sesuai kehendak bebas tanpa batas." }
+                ],
+                answer: ["A", "C"],
+                discussion: "Mentaati hukum dan ikut serta membela negara adalah bentuk kewajiban warga negara, sedangkan mendapatkan pendidikan adalah hak."
+            },
+            {
+                id: 20,
+                type: "pgk",
+                difficulty: "Sedang",
+                materi: "Bab I - Tokoh Perumus Pancasila",
+                question: "Pilihlah DUA tokoh nasional yang menyampaikan usulan rancangan dasar negara pada Sidang Pertama BPUPKI!",
+                options: [
+                    { key: "A", text: "Mr. Moh. Yamin" },
+                    { key: "B", text: "Dr. K.R.T. Radjiman Wedyodiningrat" },
+                    { key: "C", text: "Prof. Dr. Mr. Soepomo" },
+                    { key: "D", text: "Jenderal Soedirman" }
+                ],
+                answer: ["A", "C"],
+                discussion: "Tiga pengusul dasar negara di BPUPKI adalah Mr. Moh. Yamin, Prof. Dr. Soepomo, dan Ir. Soekarno."
+            },
+            {
+                id: 21,
+                type: "pgk",
+                difficulty: "HOTS",
+                materi: "Bab I - Nilai-Nilai Sila Pancasila",
+                question: "Pilihlah DUA tindakan nyata yang mencerminkan pengamalan Sila Kelima Pancasila ('Keadilan Sosial bagi Seluruh Rakyat Indonesia') di masyarakat!",
+                options: [
+                    { key: "A", text: "Memberikan bantuan sosial secara adil kepada warga yang kurang mampu tanpa diskriminasi." },
+                    { key: "B", text: "Melakukan monopoli perdagangan demi keuntungan pribadi." },
+                    { key: "C", text: "Menghargai hasil karya orang lain dan menjaga keseimbangan hak serta kewajiban." },
+                    { key: "D", text: "Menggunakan fasilitas umum secara semena-mena." }
+                ],
+                answer: ["A", "C"],
+                discussion: "Sila kelima menekankan keadilan sosial, penghargaan karya orang lain, serta keseimbangan hak dan kewajiban."
+            },
+            {
+                id: 22,
+                type: "pgk",
+                difficulty: "Sedang",
+                materi: "Bab II - Hak Warga Negara",
+                question: "Manakah DUA hak warga negara yang dijamin secara tegas di dalam UUD NRI Tahun 1945?",
+                    options: [
+                    { key: "A", text: "Hak atas pekerjaan dan penghidupan yang layak (Pasal 27 ayat 2)." },
+                    { key: "B", text: "Hak untuk melakukan tindakan main hakim sendiri di masyarakat." },
+                    { key: "C", text: "Hak memeluk agama dan beribadat menurut agamanya (Pasal 29 ayat 2)." },
+                    { key: "D", text: "Hak untuk melanggar peraturan lalu lintas saat darurat." }
+                ],
+                answer: ["A", "C"],
+                discussion: "Pekerjaan/penghidupan layak dan kebebasan beragama dijamin secara konstitusional oleh UUD 1945."
+            },
+            {
+                id: 23,
+                type: "pgk",
+                difficulty: "HOTS",
+                materi: "Bab II - Penerapan Konstitusi dalam Masyarakat",
+                question: "Di sebuah desa, warga merumuskan aturan adat baru yang melarang warga pendatang untuk menyampaikan pendapat dalam musyawarah desa. Manakah DUA bentuk analisis konstitusional yang tepat terhadap kasus ini?",
+                options: [
+                    { key: "A", text: "Aturan tersebut bertentangan dengan semangat konstitusi UUD 1945 mengenai persamaan kedudukan." },
+                    { key: "B", text: "Aturan tersebut sah karena hukum adat selalu di atas konstitusi negara." },
+                    { key: "C", text: "Hal tersebut melanggar prinsip demokrasi dan hak asasi manusia warga negara." },
+                    { key: "D", text: "Pemerintah pusat wajib mendukung penuh aturan diskriminatif tersebut." }
+                ],
+                answer: ["A", "C"],
+                discussion: "Konstitusi Indonesia menjamin persamaan hak dan kebebasan berpendapat bagi seluruh warga tanpa diskriminasi asal-usul."
+            },
+            {
+                id: 24,
+                type: "pgk",
+                difficulty: "Sedang",
+                materi: "Bab I - Perumusan Dasar Negara",
+                question: "Pilihlah DUA hal penting yang menjadi hasil kesepakatan dalam Panitia Sembilan sebelum Proklamasi Kemerdekaan Indonesia!",
+                options: [
+                    { key: "A", text: "Piagam Jakarta (Jakarta Charter) yang memuat rumusan dasar negara." },
+                    { key: "B", text: "Kesepakatan mengenai bentuk negara federal mutlak." },
+                    { key: "C", text: "Kompromi perumusan sila pertama yang kemudian disempurnakan." },
+                    { key: "D", text: "Penetapan mata uang resmi pertama Republik Indonesia." }
+                ],
+                answer: ["A", "C"],
+                discussion: "Panitia Sembilan berhasil merumuskan Piagam Jakarta yang di dalamnya memuat rumusan dasar negara yang kemudian disempurnakan."
+            },
+            {
+                id: 25,
+                type: "pgk",
+                difficulty: "HOTS",
+                materi: "Bab II - Hak dan Kewajiban",
+                question: "Sebagai pelajar SMA, bagaimana cara terbaik menyeimbangkan antara hak dan kewajiban dalam kehidupan sehari-hari? Pilihlah DUA jawaban yang benar!",
+                options: [
+                    { key: "A", text: "Menuntut fasilitas belajar dipenuhi sekolah sembari tetap rajin belajar dan menaati tata tertib." },
+                    { key: "B", text: "Hanya menuntut hak nilai bagus tanpa pernah mengerjakan tugas sekolah." },
+                    { key: "C", text: "Melaksanakan kewajiban piket kelas dengan penuh tanggung jawab sebelum meminta hak istirahat." },
+                    { key: "D", text: "Mengabaikan seluruh peraturan sekolah demi kebebasan pribadi." }
+                ],
+                answer: ["A", "C"],
+                discussion: "Keseimbangan hak dan kewajiban terwujud saat kita menuntut hak setelah melaksanakan kewajiban secara bertanggung jawab."
+            },
+
+            // --- BAGIAN 3: BENAR ATAU SALAH (5 SOAL) ---
+            {
+                id: 26,
+                type: "bs",
+                difficulty: "Mudah",
+                materi: "Bab I - Sejarah Perumusan Pancasila",
+                question: "Hari Lahir Pancasila diperingati setiap tanggal 1 Juni berdasarkan pidato Ir. Soekarno pada sidang BPUPKI 1945.",
+                options: [
+                    { key: "B", text: "BENAR" },
+                    { key: "S", text: "SALAH" }
+                ],
+                answer: "B",
+                discussion: "Pernyataan benar. Tanggal 1 Juni diperingati sebagai Hari Lahir Pancasila."
+            },
+            {
+                id: 27,
+                type: "bs",
+                difficulty: "Sedang",
+                materi: "Bab II - UUD NRI Tahun 1945",
+                question: "UUD NRI Tahun 1945 merupakan konstitusi tidak tertulis yang kedudukannya berada di bawah peraturan daerah.",
+                options: [
+                    { key: "B", text: "BENAR" },
+                    { key: "S", text: "SALAH" }
+                ],
+                answer: "S",
+                discussion: "Pernyataan salah. UUD 1945 adalah konstitusi tertulis dan merupakan hukum tertinggi (di atas peraturan daerah)."
+            },
+            {
+                id: 28,
+                type: "bs",
+                difficulty: "Mudah",
+                materi: "Bab I - Fungsi Pancasila",
+                question: "Pancasila sebagai ideologi terbuka berarti nilai-nilai dasarnya dapat diubah total kapan saja sesuai keinginan penguasa yang sedang menjabat.",
+                options: [
+                    { key: "B", text: "BENAR" },
+                    { key: "S", text: "SALAH" }
+                ],
+                answer: "S",
+                discussion: "Pernyataan salah. Ideologi terbuka berarti nilai dasarnya tetap dan tidak berubah, namun penjabaran dan penerapannya bersifat fleksibel mengikuti perkembangan zaman."
+            },
+            {
+                id: 29,
+                type: "bs",
+                difficulty: "Sedang",
+                materi: "Bab II - Hak dan Kewajiban Warga Negara",
+                question: "Membela negara bukan hanya hak tentara, melainkan merupakan hak sekaligus kewajiban setiap warga negara Indonesia sebagaimana diatur dalam UUD 1945.",
+                options: [
+                    { key: "B", text: "BENAR" },
+                    { key: "S", text: "SALAH" }
+                ],
+                answer: "B",
+                discussion: "Pernyataan benar. Pasal 27 ayat (3) UUD 1945 menyatakan setiap warga negara berhak dan wajib ikut serta dalam upaya pembelaan negara."
+            },
+            {
+                id: 30,
+                type: "bs",
+                difficulty: "HOTS",
+                materi: "Bab I - Penerapan Nilai Pancasila",
+                question: "Sikap intoleransi terhadap perbedaan SARA (Suku, Agama, Ras, dan Antargolongan) di lingkungan sekolah sangat bertentangan dengan nilai-nilai Pancasila terutama sila pertama dan ketiga.",
+                options: [
+                    { key: "B", text: "BENAR" },
+                    { key: "S", text: "SALAH" }
+                ],
+                answer: "B",
+                discussion: "Pernyataan benar. Intoleransi bertentangan dengan sila pertama (kebebasan beragama/berkeyakinan) dan sila ketiga (persatuan)."
+            }
+        ];
+
+        // State Aplikasi
+        let currentStudent = { name: '', class: '', number: '' };
+        let currentQuestionIndex = 0;
+        let userAnswers = {}; // { questionId: answer (string or array) }
+        let timerInterval = null;
+        let timeLeft = 90 * 60; // 90 menit dalam detik
+        let examSubmitted = false;
+        let examResultData = null;
+
+        // Inisialisasi awal saat halaman dimuat
+        window.onload = function() {
+            // Load saved student list or initialize localStorage if empty
+            if (!localStorage.getItem('ppkn_exam_results')) {
+                localStorage.setItem('ppkn_exam_results', JSON.stringify([]));
+            }
+        };
+
+        // Mulai Ujian dari Halaman Selamat Datang
+        function startExam(event) {
+            event.preventDefault();
+            const name = document.getElementById('student-name').value.trim();
+            const className = document.getElementById('student-class').value;
+            const number = document.getElementById('student-number').value.trim();
+
+            if (!name || !className || !number) {
+                showAlert("Form Belum Lengkap", "Mohon lengkapi Nama, Kelas, dan Nomor Absen Anda terlebih dahulu.");
+                return;
+            }
+
+            currentStudent = { name, class: className, number };
+            
+            // Update Header & UI
+            document.getElementById('display-student-name').innerText = name;
+            document.getElementById('display-student-info').innerText = `Kelas: ${className} | No Absen: ${number}`;
+
+            // Pindah Halaman
+            document.getElementById('page-welcome').classList.add('hidden');
+            document.getElementById('page-exam').classList.remove('hidden');
+            document.getElementById('header-timer-container').classList.remove('hidden');
+            document.getElementById('header-timer-container').classList.add('flex');
+
+            // Render Navigasi & Soal Pertama
+            renderQuestionNavGrid();
+            loadQuestion(0);
+            startTimer();
+        }
+
+        // Timer Hitung Mundur
+        function startTimer() {
+            timerInterval = setInterval(() => {
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    autoSubmitExamDueToTime();
+                    return;
+                }
+                timeLeft--;
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                const displayStr = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+                document.getElementById('timer-display').innerText = displayStr;
+
+                // Warning ketika waktu sisa 5 menit
+                if (timeLeft === 300) {
+                    showAlert("Peringatan Waktu", "Waktu ujian tersisa 5 menit lagi! Silakan periksa kembali jawaban Anda.");
+                }
+            }, 1000);
+        }
+
+        // Muat Soal Berdasarkan Indeks
+        function loadQuestion(index) {
+            currentQuestionIndex = index;
+            const q = questionsData[index];
+
+            // Badge Nomor & Tipe
+            document.getElementById('badge-question-number').innerText = `Soal ke-${index + 1} dari 30`;
+            
+            let typeLabel = "Pilihan Ganda Biasa";
+            if (q.type === 'pgk') typeLabel = "Pilihan Ganda Kompleks (Pilih Lebih Dari Satu)";
+            if (q.type === 'bs') typeLabel = "Benar atau Salah";
+            document.getElementById('badge-question-type').innerText = typeLabel;
+
+            // Badge Kesulitan
+            const diffBadge = document.getElementById('badge-question-difficulty');
+            diffBadge.innerText = q.difficulty;
+            if (q.difficulty === 'Mudah') {
+                diffBadge.className = "bg-emerald-100 text-emerald-800 font-semibold text-xs px-2.5 py-1 rounded-md";
+            } else if (q.difficulty === 'Sedang') {
+                diffBadge.className = "bg-blue-100 text-blue-800 font-semibold text-xs px-2.5 py-1 rounded-md";
+            } else {
+                diffBadge.className = "bg-purple-100 text-purple-800 font-semibold text-xs px-2.5 py-1 rounded-md";
+            }
+
+            // Teks Soal
+            document.getElementById('question-text-container').innerText = q.question;
+
+            // Render Opsi Jawaban
+            const optionsContainer = document.getElementById('options-container');
+            optionsContainer.innerHTML = '';
+
+            const currentAns = userAnswers[q.id];
+
+            q.options.forEach(opt => {
+                const label = document.createElement('label');
+                label.className = "flex items-start p-3.5 rounded-xl border border-slate-200 hover:bg-red-50/40 hover:border-red-300 cursor-pointer transition duration-150 bg-white shadow-sm";
+
+                let inputElem = '';
+                if (q.type === 'pg' || q.type === 'bs') {
+                    const isChecked = currentAns === opt.key ? 'checked' : '';
+                    inputElem = `<input type="radio" name="q_${q.id}" value="${opt.key}" ${isChecked} onchange="saveAnswer(${q.id}, '${opt.key}', 'single')" class="mt-1 h-4 w-4 text-red-600 focus:ring-red-500 border-slate-300">`;
+                } else if (q.type === 'pgk') {
+                    const isChecked = (Array.isArray(currentAns) && currentAns.includes(opt.key)) ? 'checked' : '';
+                    inputElem = `<input type="checkbox" name="q_${q.id}" value="${opt.key}" ${isChecked} onchange="saveAnswer(${q.id}, '${opt.key}', 'multiple')" class="mt-1 h-4 w-4 text-red-600 focus:ring-red-500 rounded border-slate-300">`;
+                }
+
+                label.innerHTML = `
+                    <div class="flex items-center h-5 mr-3">${inputElem}</div>
+                    <div class="flex-grow text-slate-700 text-sm sm:text-base">
+                        <strong class="mr-2 text-red-700 font-bold">${opt.key}.</strong> ${opt.text}
+                    </div>
+                `;
+                optionsContainer.appendChild(label);
+            });
+
+            // Tombol Navigasi Sebelumnya / Selanjutnya
+            document.getElementById('btn-prev').disabled = (index === 0);
+            const nextBtn = document.getElementById('btn-next');
+            if (index === questionsData.length - 1) {
+                nextBtn.innerHTML = `<span>Selesai</span> <i class="fa-solid fa-check"></i>`;
+                nextBtn.className = "bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-5 py-2.5 rounded-xl text-xs sm:text-sm transition flex items-center space-x-2 shadow";
+                nextBtn.setAttribute('onclick', 'confirmSubmitExam()');
+            } else {
+                nextBtn.innerHTML = `<span>Selanjutnya</span> <i class="fa-solid fa-chevron-right"></i>`;
+                nextBtn.className = "bg-red-600 hover:bg-red-700 text-white font-semibold px-5 py-2.5 rounded-xl text-xs sm:text-sm transition flex items-center space-x-2 shadow";
+                nextBtn.setAttribute('onclick', 'navigateQuestion(1)');
+            }
+
+            updateQuestionNavGridStyles();
+            updateProgressStats();
+        }
+
+        // Navigasi Maju / Mundur
+        function navigateQuestion(direction) {
+            const newIndex = currentQuestionIndex + direction;
+            if (newIndex >= 0 && newIndex < questionsData.length) {
+                loadQuestion(newIndex);
+            }
+        }
+
+        // Simpan Jawaban Siswa
+        function saveAnswer(questionId, optionKey, type) {
+            const q = questionsData.find(item => item.id === questionId);
+            if (type === 'single') {
+                userAnswers[questionId] = optionKey;
+            } else if (type === 'multiple') {
+                if (!Array.isArray(userAnswers[questionId])) {
+                    userAnswers[questionId] = [];
+                }
+                const index = userAnswers[questionId].indexOf(optionKey);
+                if (index > -1) {
+                    userAnswers[questionId].splice(index, 1);
+                } else {
+                    userAnswers[questionId].push(optionKey);
+                }
+                // Urutkan abjad
+                userAnswers[questionId].sort();
+                if (userAnswers[questionId].length === 0) {
+                    delete userAnswers[questionId];
+                }
+            }
+            updateQuestionNavGridStyles();
+            updateProgressStats();
+        }
+
+        // Render Tombol Grid Nomor Soal
+        function renderQuestionNavGrid() {
+            const grid = document.getElementById('question-nav-grid');
+            grid.innerHTML = '';
+            for (let i = 0; i < questionsData.length; i++) {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.id = `nav-btn-${i}`;
+                btn.innerText = i + 1;
+                btn.className = "w-10 h-10 rounded-lg text-xs font-bold border border-slate-300 bg-white text-slate-700 hover:bg-slate-100 transition flex items-center justify-center";
+                btn.onclick = () => loadQuestion(i);
+                grid.appendChild(btn);
+            }
+            updateQuestionNavGridStyles();
+        }
+
+        // Update Gaya Navigasi Nomor Soal (Aktif, Sudah Terjawab, Belum)
+        function updateQuestionNavGridStyles() {
+            for (let i = 0; i < questionsData.length; i++) {
+                const btn = document.getElementById(`nav-btn-${i}`);
+                if (!btn) continue;
+                const qId = questionsData[i].id;
+                const isAnswered = userAnswers[qId] !== undefined && (Array.isArray(userAnswers[qId]) ? userAnswers[qId].length > 0 : userAnswers[qId] !== '');
+
+                if (i === currentQuestionIndex) {
+                    btn.className = "w-10 h-10 rounded-lg text-xs font-bold border-2 border-red-700 bg-red-600 text-white shadow transition flex items-center justify-center";
+                } else if (isAnswered) {
+                    btn.className = "w-10 h-10 rounded-lg text-xs font-bold border border-emerald-500 bg-emerald-100 text-emerald-800 transition flex items-center justify-center";
+                } else {
+                    btn.className = "w-10 h-10 rounded-lg text-xs font-bold border border-slate-300 bg-white text-slate-700 hover:bg-slate-100 transition flex items-center justify-center";
+                }
+            }
+        }
+
+        // Update Indikator Progres
+        function updateProgressStats() {
+            let answeredCount = 0;
+            questionsData.forEach(q => {
+                const ans = userAnswers[q.id];
+                if (ans !== undefined && (Array.isArray(ans) ? ans.length > 0 : ans !== '')) {
+                    answeredCount++;
+                }
+            });
+            document.getElementById('progress-text').innerText = `${answeredCount} dari 30 Soal Dijawab`;
+            const percent = (answeredCount / 30) * 100;
+            document.getElementById('progress-bar-fill').style.width = `${percent}%`;
+        }
+
+        // Konfirmasi Selesai Ujian
+        function confirmSubmitExam() {
+            let answeredCount = 0;
+            questionsData.forEach(q => {
+                const ans = userAnswers[q.id];
+                if (ans !== undefined && (Array.isArray(ans) ? ans.length > 0 : ans !== '')) {
+                    answeredCount++;
+                }
+            });
+
+            const unanswered = 30 - answeredCount;
+            const msg = unanswered > 0 
+                ? `Anda masih memiliki ${unanswered} soal yang belum dijawab. Yakin ingin mengirimkan ujian sekarang?`
+                : `Semua 30 soal telah dijawab. Yakin ingin mengakhiri dan mengirimkan jawaban ujian?`;
+            
+            document.getElementById('confirm-message').innerText = msg;
+            document.getElementById('modal-confirm').classList.remove('hidden');
+        }
+
+        function closeConfirmModal() {
+            document.getElementById('modal-confirm').classList.add('hidden');
+        }
+
+        function autoSubmitExamDueTime() {
+            showAlert("Waktu Habis", "Waktu pengerjaan 90 menit telah habis. Sistem akan otomatis mengirimkan jawaban Anda.");
+            submitExamFinal();
+        }
+
+        // Proses Akhir Pengiriman & Penilaian Otomatis
+        function submitExamFinal() {
+            clearInterval(timerInterval);
+            closeConfirmModal();
+            document.getElementById('modal-confirm').classList.add('hidden');
+            document.getElementById('header-timer-container').classList.add('hidden');
+
+            // Hitung Skor
+            let correctCount = 0;
+            let wrongCount = 0;
+
+            questionsData.forEach(q => {
+                const userAns = userAnswers[q.id];
+                if (q.type === 'pg' || q.type === 'bs') {
+                    if (userAns === q.answer) {
+                        correctCount++;
+                    } else {
+                        wrongCount++;
+                    }
+                } else if (q.type === 'pgk') {
+                    // Penilaian PG Kompleks: Benar jika seluruh elemen benar dan tepat
+                    if (Array.isArray(userAns) && Array.isArray(q.answer)) {
+                        const sortedUser = [...userAns].sort();
+                        const sortedCorrect = [...q.answer].sort();
+                        if (sortedUser.length === sortedCorrect.length && sortedUser.every((val, idx) => val === sortedCorrect[idx])) {
+                            correctCount++;
+                        } else {
+                            wrongCount++;
+                        }
+                    } else {
+                        wrongCount++;
+                    }
+                }
+            });
+
+            // Skala 0-100 (bobot sama setiap soal)
+            const finalScore = Math.round((correctCount / 30) * 100);
+
+            // Kategori Hasil
+            let category = "Perlu Bimbingan";
+            if (finalScore >= 90) category = "Sangat Baik";
+            else if (finalScore >= 80) category = "Baik";
+            else if (finalScore >= 70) category = "Cukup";
+
+            // Waktu Pengerjaan
+            const timeSpentSeconds = (90 * 60) - timeLeft;
+            const spentMin = Math.floor(timeSpentSeconds / 60);
+            const spentSec = timeSpentSeconds % 60;
+            const timeSpentStr = `${spentMin}m ${spentSec}s`;
+
+            examResultData = {
+                name: currentStudent.name,
+                className: currentStudent.class,
+                number: currentStudent.number,
+                correct: correctCount,
+                wrong: wrongCount,
+                score: finalScore,
+                category: category,
+                timeSpent: timeSpentStr,
+                timestamp: new Date().toLocaleString()
+            };
+
+            // Simpan ke LocalStorage Rekap Guru
+            saveResultToStorage(examResultData);
+
+            // Tampilkan Halaman Hasil
+            document.getElementById('page-exam').classList.add('hidden');
+            document.getElementById('page-result').classList.remove('hidden');
+
+            document.getElementById('result-score').innerText = finalScore;
+            document.getElementById('result-category').innerText = category;
+            document.getElementById('result-student-name').innerText = currentStudent.name;
+            document.getElementById('result-student-meta').innerText = `Kelas: ${currentStudent.class} | No Absen: ${currentStudent.number}`;
+            document.getElementById('result-correct').innerText = correctCount;
+            document.getElementById('result-wrong').innerText = wrongCount;
+            document.getElementById('result-time-taken').innerText = timeSpentStr;
+
+            // Render Pembahasan Review
+            renderReviewSection();
+        }
+
+        // Simpan Hasil ke LocalStorage
+        function saveResultToStorage(result) {
+            let results = JSON.parse(localStorage.getItem('ppkn_exam_results')) || [];
+            results.push(result);
+            localStorage.setItem('ppkn_exam_results', JSON.stringify(results));
+        }
+
+        // Tampilkan / Sembunyikan Pembahasan
+        function toggleReviewMode() {
+            const section = document.getElementById('review-section');
+            if (section.classList.contains('hidden')) {
+                section.classList.remove('hidden');
+                section.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                section.classList.add('hidden');
+            }
+        }
+
+        // Render Kunci Jawaban & Pembahasan
+        function renderReviewSection() {
+            const container = document.getElementById('review-list-container');
+            container.innerHTML = '';
+
+            questionsData.forEach((q, idx) => {
+                const userAns = userAnswers[q.id];
+                let isUserCorrect = false;
+
+                if (q.type === 'pg' || q.type === 'bs') {
+                    isUserCorrect = (userAns === q.answer);
+                } else if (q.type === 'pgk') {
+                    if (Array.isArray(userAns) && Array.isArray(q.answer)) {
+                        const su = [...userAns].sort();
+                        const sc = [...q.answer].sort();
+                        isUserCorrect = (su.length === sc.length && su.every((v, i) => v === sc[i]));
+                    }
+                }
+
+                const card = document.createElement('div');
+                card.className = "border border-slate-200 rounded-xl p-4 sm:p-5 bg-slate-50 space-y-3";
+
+                let userAnsDisplay = Array.isArray(userAns) ? userAns.join(', ') : (userAns || 'Tidak dijawab');
+                let correctAnsDisplay = Array.isArray(q.answer) ? q.answer.join(', ') : q.answer;
+
+                card.innerHTML = `
+                    <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 pb-2">
+                        <span class="font-bold text-slate-800 text-sm">Soal No. ${idx + 1} (${q.materi})</span>
+                        <span class="text-xs px-2.5 py-1 rounded font-semibold ${isUserCorrect ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800'}">
+                            ${isUserCorrect ? '<i class="fa-solid fa-check mr-1"></i> Benar' : '<i class="fa-solid fa-xmark mr-1"></i> Salah'}
+                        </span>
+                    </div>
+                    <p class="text-slate-800 font-medium text-sm sm:text-base">${q.question}</p>
+                    <div class="text-xs sm:text-sm grid grid-cols-1 sm:grid-cols-2 gap-2 bg-white p-3 rounded-lg border border-slate-200">
+                        <div><span class="text-slate-500 font-medium">Jawaban Anda:</span> <strong class="${isUserCorrect ? 'text-emerald-600' : 'text-rose-600'}">${userAnsDisplay}</strong></div>
+                        <div><span class="text-slate-500 font-medium">Kunci Jawaban:</span> <strong class="text-emerald-700">${correctAnsDisplay}</strong></div>
+                    </div>
+                    <div class="text-xs text-slate-600 bg-red-50/60 p-3 rounded-lg border border-red-100">
+                        <strong class="text-red-800 block mb-1"><i class="fa-solid fa-lightbulb text-amber-500 mr-1"></i> Pembahasan:</strong>
+                        ${q.discussion}
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Panel Guru / Rekap Nilai
+        function openTeacherDashboard() {
+            const results = JSON.parse(localStorage.getItem('ppkn_exam_results')) || [];
+            const tbody = document.getElementById('teacher-table-body');
+            tbody.innerHTML = '';
+
+            if (results.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="8" class="p-4 text-center text-slate-500">Belum ada data siswa yang mengirimkan ujian.</td></tr>`;
+            } else {
+                results.forEach((res, index) => {
+                    const tr = document.createElement('tr');
+                    tr.className = "hover:bg-slate-50";
+                    tr.innerHTML = `
+                        <td class="p-3 font-medium">${index + 1}</td>
+                        <td class="p-3 font-bold text-slate-800">${res.name}</td>
+                        <td class="p-3">${res.className}</td>
+                        <td class="p-3">${res.number}</td>
+                        <td class="p-3 text-center text-emerald-600 font-bold">${res.correct}</td>
+                        <td class="p-3 text-center text-rose-600 font-bold">${res.wrong}</td>
+                        <td class="p-3 text-center font-extrabold text-red-600">${res.score}</td>
+                        <td class="p-3"><span class="px-2 py-1 rounded text-xs font-semibold bg-slate-100 text-slate-700">${res.category}</span></td>
+                    `;
+                    tbody.appendChild(tr);
+                });
+            }
+
+            document.getElementById('modal-teacher').classList.remove('hidden');
+        }
+
+        function closeTeacherDashboard() {
+            document.getElementById('modal-teacher').classList.add('hidden');
+        }
+
+        // Unduh CSV Rekap
+        function downloadCSV() {
+            const results = JSON.parse(localStorage.getItem('ppkn_exam_results')) || [];
+            if (results.length === 0) {
+                showAlert("Data Kosong", "Belum ada data rekap untuk diunduh.");
+                return;
+            }
+
+            let csvContent = "data:text/csv;charset=utf-8,";
+            csvContent += "No,Nama Peserta,Kelas,Nomor Absen,Benar,Salah,Nilai Akhir,Kategori,Waktu Selesai\r\n";
+
+            results.forEach((res, idx) => {
+                csvContent += `${idx + 1},"${res.name}",${res.className},${res.number},${res.correct},${res.wrong},${res.score},"${res.category}","${res.timestamp}"\r\n`;
+            });
+
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", `Rekap_Nilai_SAS_PPKn_KelasX_${new Date().toISOString().slice(0,10)}.csv`);
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // Reset Ujian untuk Ulangi
+        function resetExam() {
+            userAnswers = {};
+            currentQuestionIndex = 0;
+            timeLeft = 90 * 60;
+            examSubmitted = false;
+            
+            document.getElementById('page-result').classList.add('hidden');
+            document.getElementById('page-welcome').classList.remove('hidden');
+            document.getElementById('form-identity').reset();
+        }
+
+        // Helper Modal Alert
+        function showAlert(title, message) {
+            document.getElementById('alert-title').innerText = title;
+            document.getElementById('alert-message').innerText = message;
+            document.getElementById('modal-alert').classList.remove('hidden');
+        }
+
+        function closeAlertModal() {
+            document.getElementById('modal-alert').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
